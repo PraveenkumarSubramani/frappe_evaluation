@@ -1,0 +1,28 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2024-05-10 08:39:18.479233",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{}",
+ "letterhead": null,
+ "modified": "2024-05-10 09:14:44.358512",
+ "modified_by": "Administrator",
+ "module": "Airline Management",
+ "name": "Revenue by Airline",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\n    airline.name AS 'Airline',\n    IFNULL(SUM(ticket.total_amount), 0) AS 'Revenue'\nFROM\n    `tabAirline` AS airline\nLEFT JOIN\n    `tabAirplane` AS airplane ON airline.name = airplane.airline\nLEFT JOIN\n    `tabAirplane Flight` AS flight ON airplane.name = flight.airplane\nLEFT JOIN\n    `tabAirplane Ticket` AS ticket ON flight.name = ticket.flight\nGROUP BY\n    airline.name",
+ "ref_doctype": "Airplane Ticket",
+ "report_name": "Revenue by Airline",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ]
+}
