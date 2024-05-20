@@ -1,0 +1,31 @@
+{%  extends "templates/web.html" %}
+
+{% block page_content %}
+<style>
+    .button1 {
+        background-color: #2ea2e4; 
+        color: white;
+        padding: 15px 32px;
+         
+      }
+</style>
+{% set airline = frappe.db.get_value("Airplane",doc.airplane,"airline")%}
+<div class="py-20 row">
+<div class="col-sm-2">
+</div>
+<div class="col">
+<h1>{{ doc.name }}</h1>
+<p class="lead">Flight Details</p>
+<div class="row">
+    <ul>
+        <li>Airline: {{airline}}</li>
+        <li>{{ doc.source_airport_code }} &#8594; {{ doc.destination_airport_code }}</li>
+        <li>{{ frappe.utils.format_date(doc.date_of_departure, "YYYY-MM-dd") }} | {{ doc.time_of_departure }}</li>
+        <li>Duration: {{frappe.utils.format_duration(doc.duration)}}</li>
+      </ul>
+</div>
+<div class="col">
+    <br><a href="{{ frappe.utils.get_url('/book_ticket/' + doc.name) }}" class="button1"><b>Book Flight</b></a>
+</div>
+
+{% endblock %}

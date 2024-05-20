@@ -1,0 +1,6 @@
+<div class="col" style="background: tile;background-color:#F8F8F8">
+    {% set airline = frappe.db.get_value("Airplane",doc.airplane,"airline")%}
+    <h7 style="color: black;font-size: 20px">{{ airline }}</h7>
+    <p class="text-muted" style="font-size: 14px;color:black">{{ doc.source_airport_code }} &#8594; {{ doc.destination_airport_code }}<br>{{ frappe.utils.format_date(doc.date_of_departure, "d MMMM, YYYY") }} | {{ doc.time_of_departure }} | {{frappe.utils.format_duration(doc.duration)}}<br><br><a class="font-size-lg" href="{{doc.route}}" style="color:#87CEEB;">View Flight</a></p>
+</div>
+</div>
