@@ -17,14 +17,16 @@ frappe.ui.form.on("Airplane Ticket", {
                 primary_action_label: 'Assign',
                 primary_action(values) {
                         frm.set_value('seat', values.assign_seat);
-                    
-                    
                     d.hide();
                 }
             });
-            
             d.show();
         },__("Actions"));
-
 	},
+    onload: function(frm){
+        if(frm.doc.docstatus == 1){
+            frm.set_df_property('gate_number', 'read_only', 1);
+            frm.refresh_field('gate_number');
+        }
+    }
 });

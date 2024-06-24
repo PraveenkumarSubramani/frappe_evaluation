@@ -8,7 +8,7 @@
  "field_order": [
   "model",
   "airline",
-  "capacity"
+  "no_of_seats"
  ],
  "fields": [
   {
@@ -27,7 +27,7 @@
    "reqd": 1
   },
   {
-   "fieldname": "capacity",
+   "fieldname": "no_of_seats",
    "fieldtype": "Int",
    "label": "Capacity",
    "non_negative": 1,
@@ -36,7 +36,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-06-24 16:33:41.955739",
+ "modified": "2024-06-24 17:10:50.291331",
  "modified_by": "Administrator",
  "module": "Airline Management",
  "name": "Airplane",

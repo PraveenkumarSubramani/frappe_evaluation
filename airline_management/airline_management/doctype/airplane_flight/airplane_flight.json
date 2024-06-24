@@ -8,9 +8,10 @@
  "engine": "InnoDB",
  "field_order": [
   "airplane",
-  "amended_from",
+  "gate",
   "column_break_dlve",
   "status",
+  "gate_no_changed",
   "section_break_zjsw",
   "source_airport",
   "source_airport_code",
@@ -23,7 +24,8 @@
   "column_break_seei",
   "time_of_departure",
   "is_published",
-  "route"
+  "route",
+  "amended_from"
  ],
  "fields": [
   {
@@ -54,16 +56,6 @@
    "in_list_view": 1,
    "label": "Duration",
    "reqd": 1
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Airplane Flight",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
   },
   {
    "default": "Scheduled",
@@ -130,6 +122,32 @@
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "Route"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "gate",
+   "fieldtype": "Link",
+   "label": "Gate",
+   "options": "Gate",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "gate_no_changed",
+   "fieldtype": "Check",
+   "label": "Gate No Changed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Airplane Flight",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
   }
  ],
  "has_web_view": 1,
@@ -142,7 +160,7 @@
    "link_fieldname": "flight"
   }
  ],
- "modified": "2024-05-15 08:20:54.450440",
+ "modified": "2024-06-24 23:28:50.864548",
  "modified_by": "Administrator",
  "module": "Airline Management",
  "name": "Airplane Flight",
